@@ -1,7 +1,6 @@
 import { A } from "@solidjs/router";
-import { createSignal, For } from "solid-js";
+import { For } from "solid-js";
 import { Motion } from "solid-motionone";
-import { getDateString } from "~/util/date";
 import ChevronRight from "~icons/lucide/chevron-right";
 import Clock from "~icons/lucide/clock";
 import Clock3 from "~icons/lucide/clock-3";
@@ -13,9 +12,6 @@ import Users from "~icons/lucide/users";
 import Utensils from "~icons/lucide/utensils";
 
 export default function Home() {
-  const [timeRange, setTimeRange] = createSignal("1:00 pm to 3:00 pm");
-  const [date, setDate] = createSignal(getDateString(new Date()));
-
   return (
     <>
       <section class="pt-20 md:pt-32 pb-12 md:pb-20 px-4 relative">

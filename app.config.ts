@@ -9,10 +9,5 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss(), Icons({ compiler: "solid" })],
-    build: {
-      rollupOptions: {
-        external: ["jsdom"],
-      },
-    },
   },
 });

@@ -11,8 +11,6 @@ export interface CfPagesEnv {
   CF_PAGES_BRANCH: string;
   CF_PAGES_COMMIT_SHA: string;
   CF_PAGES_URL: string;
-
-  UTCS_SESSION_COOKIE: string;
 }
 
 declare module "vinxi/http" {
