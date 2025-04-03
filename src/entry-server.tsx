@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { getCookie } from "vinxi/http";
 
 export default createHandler((ctx) => {
-  const theme = getCookie(ctx.nativeEvent, "color-theme") ?? "light";
+  const theme = (getCookie(ctx.nativeEvent, "color-theme") ?? "dark").split(",")[0];
 
   return (
     <StartServer
@@ -18,7 +18,7 @@ export default createHandler((ctx) => {
             {assets}
           </head>
           <body>
-            <div id="app" class="flex flex-col min-h-screen bg-background overflow-x-hidden">
+            <div id="app" class="flex min-h-screen flex-col overflow-x-hidden bg-background">
               {children}
             </div>
             {scripts}

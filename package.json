@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@solid-primitives/cookies": "^0.0.1",
+    "@solid-primitives/media": "^2.3.0",
     "@solidjs/router": "^0.15.3",
     "@solidjs/start": "^1.1.3",
     "clsx": "^2.1.1",
