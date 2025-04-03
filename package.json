@@ -17,9 +17,9 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.0-beta.1",
-    "@cloudflare/workers-types": "^4.20250303.0",
+    "@cloudflare/workers-types": "^4.20250403.0",
     "@iconify-json/lucide": "^1.2.34",
-    "@tailwindcss/vite": "^4.0.7",
+    "@tailwindcss/vite": "^4.1.1",
     "tailwindcss": "^4.1.1",
     "tailwindcss-animate": "^1.0.7",
     "unplugin-icons": "^22.1.0"
