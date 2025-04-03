@@ -17,8 +17,8 @@ export default createHandler((ctx) => {
             <meta name="description" content="Longhorn Developers." />
             {assets}
           </head>
-          <body>
-            <div id="app" class="flex min-h-screen flex-col overflow-x-hidden bg-background">
+          <body class="bg-background">
+            <div id="app" class="flex min-h-screen flex-col overflow-x-hidden">
               {children}
             </div>
             {scripts}
