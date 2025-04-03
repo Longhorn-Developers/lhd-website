@@ -29,14 +29,14 @@ const DatePicker: VoidComponent<DatePickerProps> = (props) => {
           initialFocusEl={props.focusedDayRef ?? undefined}
           labelId={labelId()}
         >
-          <Popover.Trigger class="my-auto flex w-56 items-center space-x-2 rounded-md bg-zinc-800 border-1 border-zinc-600 cursor-pointer px-3 py-2 transition-all duration-100 hover:bg-zinc-700">
+          <Popover.Trigger class="my-auto flex w-56 cursor-pointer items-center space-x-2 rounded-md border-1 border-zinc-600 bg-zinc-800 px-3 py-2 transition-all duration-100 hover:bg-zinc-700">
             <CalendarBlank class="size-5" />
             <Show when={props.value} fallback={<span>Pick a date</span>}>
               <span>{formatTrigger(props.value!)}</span>
             </Show>
           </Popover.Trigger>
           <Popover.Portal>
-            <Popover.Content class="z-50 rounded-lg bg-zinc-800 shadow-md data-open:animate-in data-open:fade-in-50% data-open:slide-in-from-top-1 data-closed:animate-out data-closed:fade-out-50% data-closed:slide-out-to-top-1">
+            <Popover.Content class="data-open:fade-in-50% data-open:slide-in-from-top-1 data-closed:fade-out-50% data-closed:slide-out-to-top-1 z-50 rounded-lg bg-zinc-800 shadow-md data-closed:animate-out data-open:animate-in">
               <div class="rounded-md bg-zinc-800 p-3 shadow-md">
                 <div class="flex items-center justify-between gap-4">
                   <Calendar.Nav
@@ -64,7 +64,7 @@ const DatePicker: VoidComponent<DatePickerProps> = (props) => {
                         {(weekday) => (
                           <Calendar.HeadCell
                             abbr={formatWeekdayLong(weekday())}
-                            class="w-8 flex-1 pb-1 text-xs font-normal opacity-65"
+                            class="w-8 flex-1 pb-1 font-normal text-xs opacity-65"
                           >
                             {formatWeekdayShort(weekday())}
                           </Calendar.HeadCell>

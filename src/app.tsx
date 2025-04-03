@@ -10,7 +10,7 @@ const Root = (prop: RouteSectionProps) => {
   return (
     <>
       <Navbar />
-      <div class="flex flex-col flex-1">
+      <div class="flex flex-1 flex-col">
         <Suspense>{prop.children}</Suspense>
       </div>
       <Footer />

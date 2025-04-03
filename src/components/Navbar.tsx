@@ -17,7 +17,7 @@ const NavItem: ParentComponent<NavItemProps> = (props) => {
     <A
       href={props.href}
       onClick={props.onClick}
-      class={clsx("hover:text-primary transition-colors", isActive() && "text-primary font-medium", props.class)}
+      class={clsx("transition-colors hover:text-primary", isActive() && "font-medium text-primary", props.class)}
     >
       {props.children}
     </A>
@@ -36,14 +36,14 @@ export function Navbar() {
   const [isOpen, setIsOpen] = createSignal(false);
 
   return (
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b">
-      <div class="container flex items-center justify-between h-16 px-4">
+    <nav class="fixed top-0 right-0 left-0 z-50 border-b bg-background/80 backdrop-blur-lg">
+      <div class="container flex h-16 items-center justify-between px-4">
         <A href="/" class="font-bold text-xl">
           UT Dining
         </A>
 
         {/* Desktop Navigation */}
-        <div class="hidden md:flex items-center gap-8">
+        <div class="hidden items-center gap-8 md:flex">
           <For each={navItems}>{(item) => <NavItem href={item.href}>{item.label}</NavItem>}</For>
           <ThemeControllerButton />
         </div>

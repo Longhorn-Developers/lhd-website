@@ -17,7 +17,7 @@ const FooterLink: ParentComponent<FooterLinkProps> = (props) => {
   return (
     <A
       href={props.href}
-      class="text-sm text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-2"
+      class="inline-flex items-center gap-2 text-muted-foreground text-sm transition-colors hover:text-primary"
       {...linkProps}
     >
       {props.children}
@@ -50,12 +50,12 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer class="border-t">
-      <div class="container py-8 px-4">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+      <div class="container px-4 py-8">
+        <div class="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4 md:gap-12">
           {/* About Column */}
-          <div class="col-span-2 sm:col-span-2 md:col-span-1 space-y-3">
+          <div class="col-span-2 space-y-3 sm:col-span-2 md:col-span-1">
             <h3 class="font-bold text-base">UT Dining</h3>
-            <p class="text-sm text-muted-foreground">Making campus dining better for every Longhorn.</p>
+            <p class="text-muted-foreground text-sm">Making campus dining better for every Longhorn.</p>
           </div>
 
           {/* Product Column */}
@@ -92,8 +92,8 @@ export function Footer() {
         </div>
 
         {/* Copyright Section */}
-        <div class="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
-          <p class="max-w-lg mx-auto">&copy; {new Date().getFullYear()} UT Dining. A Longhorn Developers Project.</p>
+        <div class="mt-8 border-t pt-6 text-center text-muted-foreground text-sm">
+          <p class="mx-auto max-w-lg">&copy; {new Date().getFullYear()} UT Dining. A Longhorn Developers Project.</p>
         </div>
       </div>
     </footer>
