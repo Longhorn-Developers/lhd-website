@@ -46,12 +46,6 @@ export function ThemeProvider(props: { children: JSX.Element | ((theme: Accessor
     document.querySelector("html")?.classList.toggle("dark", theme() === "dark");
   });
 
-  // onMount(() => {
-  //   if (theme() === undefined) {
-  //     updateTheme(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-  //   }
-  // });
-
   return (
     <ThemeContext.Provider value={{ theme, updateTheme }}>
       <Inner />
@@ -72,15 +66,15 @@ export const ThemeControllerButton = (props: { class?: string }) => {
       type="button"
       aria-label={theme() === "dark" ? "Switch to light mode" : "Switch to dark mode"}
       class={clsx(
-        `inline-flex h-9 w-9 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`,
+        `inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring`,
         props.class,
       )}
     >
       <Show when={theme() === "dark"}>
-        <SunIcon class="size-5" />
+        <MoonIcon class="size-5" />
       </Show>
       <Show when={theme() === "light"}>
-        <MoonIcon class="size-5" />
+        <SunIcon class="size-5" />
       </Show>
     </button>
   );

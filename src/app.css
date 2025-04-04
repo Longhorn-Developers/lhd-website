@@ -191,12 +191,11 @@
   }
 
   html {
-    overflow-y: scroll !important;
+    /* overflow-y: scroll !important; */
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    overflow-y: scroll !important;
   }
 
   ::-webkit-scrollbar {

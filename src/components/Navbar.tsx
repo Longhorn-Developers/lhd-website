@@ -1,6 +1,7 @@
 import { A, useLocation } from "@solidjs/router";
 import clsx from "clsx";
 import { createSignal, For, type ParentComponent } from "solid-js";
+import { NavDrawer } from "./NavDrawer";
 import { ThemeControllerButton } from "./ThemeController";
 
 interface NavItemProps {
@@ -48,7 +49,32 @@ export function Navbar() {
           <ThemeControllerButton />
         </div>
 
-        {/* TODO: Mobile Navigation */}
+        {/* Mobile Navigation */}
+        {/* <button
+          class="md:hidden"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Toggle Navigation"
+          type="button"
+        >
+          <MenuIcon class="size-5" />
+        </button> */}
+        <NavDrawer>
+          <div class="flex flex-col">
+            <For each={navItems}>
+              {(item) => (
+                <NavItem
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  class="w-full rounded-md px-2 py-1 font-semibold text-lg hover:bg-accent hover:text-accent-foreground!"
+                >
+                  {item.label}
+                </NavItem>
+              )}
+            </For>
+            <div class="my-2 h-px w-full bg-accent" />
+            <ThemeControllerButton />
+          </div>
+        </NavDrawer>
       </div>
     </nav>
   );
