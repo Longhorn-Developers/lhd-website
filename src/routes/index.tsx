@@ -15,20 +15,12 @@ export default function Home() {
   return (
     <>
       <section class="relative px-4 pt-20 pb-12 md:pt-32 md:pb-20">
-        <noscript>
-          <style>{`
-            .no-js\\:show {
-              opacity: 1 !important;
-              transform: translateY(0) !important;
-            }
-          `}</style>
-        </noscript>
         <div class="container mx-auto">
           <div class="mx-auto max-w-3xl space-y-4 text-center md:space-y-6">
             <Motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              class="no-js:show inline-block rounded-full bg-primary/10 px-3 py-1 font-medium text-primary text-sm"
+              class="noscript:transform-none! inline-block rounded-full bg-primary/10 px-3 py-1 font-medium text-primary text-sm noscript:opacity-100!"
             >
               Built by Longhorn Developers
             </Motion.span>
@@ -36,7 +28,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              class="no-js:show font-bold text-3xl leading-tight md:text-4xl lg:text-5xl"
+              class="noscript:transform-none! font-bold text-3xl leading-tight noscript:opacity-100! md:text-4xl lg:text-5xl"
             >
               The Ultimate Dining Experience for UT Students
             </Motion.h1>
@@ -44,7 +36,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              class="no-js:show mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl"
+              class="noscript:transform-none! mx-auto max-w-2xl text-lg text-muted-foreground noscript:opacity-100! md:text-xl"
             >
               Discover, rate, and explore dining options across campus. Join thousands of Longhorns making informed
               dining choices.
@@ -53,7 +45,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              class="no-js:show flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row"
+              class="noscript:transform-none! flex flex-col items-center justify-center gap-4 pt-4 noscript:opacity-100! sm:flex-row"
             >
               <A
                 href="/downloads"
@@ -81,11 +73,11 @@ export default function Home() {
             initial={{ opacity: 0 }}
             inView={{ opacity: 1, y: 0 }}
             inViewOptions={{ once: true }}
-            class="no-js:show mb-8 text-center font-semibold text-xl md:mb-12 md:text-2xl"
+            class="noscript:transform-none! mb-8 text-center font-semibold text-xl noscript:opacity-100! md:mb-12 md:text-2xl"
           >
             Trusted by UT Students
           </Motion.h2>
-          <div class="no-js:show grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-8">
+          <div class="noscript:transform-none! grid grid-cols-1 gap-6 noscript:opacity-100! sm:grid-cols-2 md:grid-cols-3 md:gap-8">
             <For
               each={[
                 {
@@ -111,7 +103,7 @@ export default function Home() {
                   inView={{ opacity: 1, y: 0 }}
                   inViewOptions={{ once: true }}
                   transition={{ delay: index() * 0.2 }}
-                  class="no-js:show glass space-y-2 p-4 text-center md:p-6"
+                  class="noscript:transform-none! glass space-y-2 p-4 text-center noscript:opacity-100! md:p-6"
                 >
                   {item.icon}
                   <div class="font-bold text-2xl md:text-3xl">{item.stat}</div>
@@ -130,7 +122,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             inView={{ opacity: 1, y: 0 }}
             inViewOptions={{ once: true }}
-            class="no-js:show mx-auto mb-8 max-w-2xl text-center md:mb-16"
+            class="noscript:transform-none! mx-auto mb-8 max-w-2xl text-center noscript:opacity-100! md:mb-16"
           >
             <h2 class="mb-3 font-bold text-2xl md:mb-4 md:text-3xl">Everything you need to find the perfect meal</h2>
             <p class="text-muted-foreground text-sm md:text-base">
@@ -179,7 +171,7 @@ export default function Home() {
                   inView={{ opacity: 1, y: 0 }}
                   inViewOptions={{ once: true }}
                   transition={{ delay: index() * 0.1 }}
-                  class="no-js:show glass space-y-3 p-4 md:space-y-4 md:p-6"
+                  class="noscript:transform-none! glass space-y-3 p-4 noscript:opacity-100! md:space-y-4 md:p-6"
                 >
                   <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 md:h-12 md:w-12">
                     {feature.icon}
