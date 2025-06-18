@@ -4,8 +4,12 @@ import Icons from "unplugin-icons/vite";
 
 export default defineConfig({
   server: {
-    preset: "cloudflare-pages",
-    compatibilityDate: "2025-03-08",
+    preset: "cloudflare_module",
+    compatibilityDate: "2025-06-17",
+    cloudflare: {
+      deployConfig: true,
+      nodeCompat: true
+    }
   },
   vite: {
     plugins: [tailwindcss(), Icons({ compiler: "solid" })],
